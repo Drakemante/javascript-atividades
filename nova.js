@@ -1,7 +1,9 @@
+const prompt = require("prompt-sync")()
 let result 
 let fator1
 let fator2
 let opcao
+let reiniciar = true
 
 function operacao(tipoOperacao){
 console.clear
@@ -23,8 +25,7 @@ console.log("2-Subtração\n")
 console.log("3-Multiplicação\n")
 console.log("4-Divisão\n")
 console.log("\nresposta:\t")
-opcao = prompt ()
-}
+opcao = prompt()
 
 if (opcao == 1) {
     operacao("Adição")
@@ -49,12 +50,14 @@ if (opcao == 4) {
     result = fator1 / fator2
     console.log("\nO resultado é:\t", result, "\n")
 }
-
-function inicio(){
-    while (reiniciar) {
-        calcular()
-        console.log("\nDeseja calcular novamente? digite 'verdadeiro' para sim e 'falso' para não:\n")
-        console.log("Resposta:\t")
-        prompt(reiniciar)
 }
+
+
+
+
+while (reiniciar) {
+    calcular()
+    console.log("\nDeseja calcular novamente? digite 'verdadeiro' para sim e 'falso' para não:\n")
+    console.log("Resposta:\t")
+   reiniciar = prompt()
 }
